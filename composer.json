@@ -1,0 +1,44 @@
+{
+    "name": "psiphp/object-agent-bundle",
+    "description": "Locate and render Twig templates based on object FQCNs",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Daniel Leech",
+            "email": "daniel@dantleech.com"
+        }
+    ],
+    "require": {
+        "symfony/framework-bundle": "^3.0",
+        "twig/twig": "^1.0",
+        "psiphp/object-agent": "^1.0@dev"
+    },
+    "require-dev": {
+        "symfony/console": "^3.0",
+        "symfony/yaml": "^3.0",
+        "symfony/process": "^3.0",
+        "phpunit/phpunit": "@stable",
+        "doctrine/doctrine-bundle": "^1.6",
+        "doctrine/phpcr-odm": "~1.3",
+        "doctrine/phpcr-bundle": "~1.3",
+        "jackalope/jackalope-doctrine-dbal": "~1.2",
+        "doctrine/orm": "^2.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Psi\\Bundle\\ObjectAgent\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Psi\\Bundle\\ObjectAgent\\Tests\\": "tests/",
+            "Psi\\Bundle\\ObjectAgent\\Example\\": "example/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
