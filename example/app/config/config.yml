@@ -22,3 +22,8 @@ doctrine_phpcr:
         username: admin
         password: admin
     odm:
+
+psi_object_agent:
+    enabled_agents:
+        - doctrine_orm
+        - doctrine_phpcr_odm
