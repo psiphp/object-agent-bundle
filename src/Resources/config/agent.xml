@@ -7,10 +7,12 @@
     <services>
         <service id="psi_object_agent.agent.doctrine_phpcr" class="Psi\Bridge\ObjectAgent\Doctrine\PhpcrOdm\PhpcrOdmAgent">
             <argument type="service" id="doctrine_phpcr.odm.document_manager" />
+            <tag name="psi_object_agent.agent" alias="doctrine_phpcr_odm" />
         </service>
 
         <service id="psi_object_agent.agent.doctrine_orm" class="Psi\Bridge\ObjectAgent\Doctrine\Orm\OrmAgent">
             <argument type="service" id="doctrine.orm.entity_manager" />
+            <tag name="psi_object_agent.agent" alias="doctrine_orm" />
         </service>
 
         <service id="psi_object_agent.agent_finder" class="Psi\Component\ObjectAgent\AgentFinder">

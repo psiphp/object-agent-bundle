@@ -14,7 +14,11 @@ class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('psi_object_agent');
-        $rootNode->children();
+        $rootNode->addDefaultsIfNotSet();
+        $rootNode->children()
+            ->arrayNode('enabled_agents')
+                ->prototype('scalar')->end()
+            ->end();
 
         return $treeBuilder;
     }
