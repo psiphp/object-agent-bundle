@@ -5,21 +5,18 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <service id="psi_object_agent.agent.doctrine_phpcr" class="Psi\Bridge\ObjectAgent\Doctrine\PhpcrOdm\PhpcrOdmAgent">
+        <service id="psi_object_agent.agent.doctrine_phpcr" class="Psi\Bridge\ObjectAgent\Doctrine\PhpcrOdm\PhpcrOdmAgent" public="false">
             <argument type="service" id="doctrine_phpcr.odm.document_manager" />
             <tag name="psi_object_agent.agent" alias="doctrine_phpcr_odm" />
         </service>
 
-        <service id="psi_object_agent.agent.doctrine_orm" class="Psi\Bridge\ObjectAgent\Doctrine\Orm\OrmAgent">
+        <service id="psi_object_agent.agent.doctrine_orm" class="Psi\Bridge\ObjectAgent\Doctrine\Orm\OrmAgent" public="false">
             <argument type="service" id="doctrine.orm.entity_manager" />
             <tag name="psi_object_agent.agent" alias="doctrine_orm" />
         </service>
 
         <service id="psi_object_agent.agent_finder" class="Psi\Component\ObjectAgent\AgentFinder">
-            <argument type="collection">
-                <argument type="service" id="psi_object_agent.agent.doctrine_phpcr" />
-                <argument type="service" id="psi_object_agent.agent.doctrine_orm" />
-            </argument>
+            <argument type="collection" />
         </service>
     </services>
 </container>
